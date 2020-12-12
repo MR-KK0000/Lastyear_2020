@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  margin: 0;
+  background-color: #afafaf;
+  color: black;
+}
+
+.navbar{
+  background-color: #3ff7b0;
+  color: white;
+  padding: 10px;
+}
+
+.Input ,.Viewpost{
+  margin: 20px auto;
+  width: 500px;
+  border: 1px solid #3ff7b0;
+  background-color: #afafaf;
+}
+
+
+.input_haeder{
+  padding: 15px;
+  margin: 0;
+  background-color: aliceblue;
+}
+
+.input_filed{
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #ffffff;
+  border: none;
+  caret-color: #3ff7b0;
+  word-break: break-all;
+}
+
+.input_filed:focus {
+  outline: none;
+}
+
+.Viewpost {
+  padding: 15px;
+}
