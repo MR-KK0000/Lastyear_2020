@@ -44,4 +44,4 @@ app.use(cors(corsOptions))
 
 
 // app.use(bodyParser)
-app.listen(process.env.PORT,()=>`server run start port 3002` )
+app.listen(process.env.PORT,()=> console.log(`server run start port 3002`) )

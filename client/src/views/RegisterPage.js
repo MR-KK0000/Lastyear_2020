@@ -82,7 +82,7 @@ const register = () =>{
         <div className="register" >
             <Rbox main>
                 <Rbox section f_dir="column">
-                    <h1>Book list</h1>
+                    <h1>Novel list</h1>
                     {
                         signState.state ?<Signin/>:<Signup/>
                     }
