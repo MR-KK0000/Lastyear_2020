@@ -5,7 +5,8 @@ const userSchema = new Schema({
     username: String,
     password: String,
     permissions: {type: String, default: 'user'},
-    token: String,
+    token: {type: String, default: ''},
+    status: {type: Boolean, default: true},
     created_at: { type: Date, default: Date.now},
     updated_at: { type: Date, default: Date.now}
 },{

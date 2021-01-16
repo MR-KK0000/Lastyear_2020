@@ -2,28 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 //css
-const Hbox = styled.div`
-    display: flex;
-    justify-content: space-between;
-	align-items: center;
-    background-color: #3ff7b0;
-    color: white;
-    padding: 5px;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    & p {
-        font-size: 20px;
-    }
+const Hbox = styled.nav`
+    background-color: #FFBF69;
+    color: #FF9F1C;
 `
 
 const Navbar = () =>{
     return (
-        <Hbox className="Navbar">
-            <p>Novel-list</p>
-            <input type="text"/>
-        </Hbox>
+        <div className="header">
+            <Hbox className="navbar fixed-top">
+                <h1 className="navbar-brand">MYHOMEPAGE NEW VERSION</h1>
+            </Hbox>
+        </div>
     )
 }
 

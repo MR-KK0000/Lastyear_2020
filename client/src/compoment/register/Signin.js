@@ -1,6 +1,9 @@
 import React, {useState } from 'react'
 import { useHistory }  from 'react-router-dom'
 
+import API from '../../service/api'
+
+
 
 const Signin = () =>{
     const history = useHistory()
@@ -15,10 +18,19 @@ const Signin = () =>{
         setPassword(e.target.value)
     }
 
-    const handleSignIn = () =>{
-        if(user === "kk" && password === "1234"){
-            history.push('/home')
-        }else{
+    const handleSignIn = async() =>{
+        try {
+            console.log(user)
+            let result = await API.post('/api/user/login',{
+                username: user,
+                password: password
+            })
+
+            if (result.data.status === 1){
+                history.push('/home')
+            }
+        } catch (error) {
+            console.log(error)
             setUser('')
             setPassword('')
         }
@@ -26,19 +38,17 @@ const Signin = () =>{
 
     return (
         <div className="signin">
-            <form>
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" className="form-control" id="username" autocomplete="off" value={user} onChange={handleChangeUser}/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" id="password" autocomplete="off" value={password} onChange={handleChangePassword}/>
-                </div>
-                <div className="form-group">
-                    <button className="btn btn-primary btn-block" onClick={handleSignIn} >sign in</button>
-                </div>
-            </form>
+            <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input type="text" className="form-control" id="username" autoComplete="off" value={user} onChange={handleChangeUser}/>
+            </div>
+            <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control" id="password" autoComplete="off" value={password} onChange={handleChangePassword}/>
+            </div>
+            <div className="form-group">
+                <button className="btn btn-primary btn-block" onClick={handleSignIn} >sign in</button>
+            </div>
         </div>
     )
 }
